@@ -37,6 +37,20 @@ public class LinkedListObject {
         return res;
     }
 
+    //Reversing a Linked List
+    Node reverseLL() {
+        Node prev = null;
+        Node curr = head;
+        Node next = null;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
+
     //displaying the linked list
     void display() {
         if (this.size == 0) {

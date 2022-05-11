@@ -1,44 +1,34 @@
 package mockInterviews;
 
-import java.util.Scanner;
-
 public class SearchingInSortedAndRotated {
+    static int search(int[] arr, int l, int h, int key) {
+        if (l > h)
+            return -1;
+
+        int mid = (l + h) / 2;
+        if (arr[mid] == key)
+            return mid;
+
+        if (arr[l] <= arr[mid]) {
+            if (key >= arr[l] && key <= arr[mid])
+                return search(arr, l, mid - 1, key);
+            return search(arr, mid + 1, h, key);
+        }
+        if (key >= arr[mid] && key <= arr[h])
+            return search(arr, mid + 1, h, key);
+
+        return search(arr, l, mid - 1, key);
+    }
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-//        int k = sc.nextInt();
-        int[] arr = new int[n];
-        int maxIndex = -1;
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-        maxIndex = findMaxIndex(arr, n);
-        System.out.println(maxIndex);
-    }
-
-    public static int findMaxIndex(int[] arr, int n) {
-        int max = Integer.MIN_VALUE;
-        int maxIndex = -1;
-        for (int i = 0; i < n; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-                maxIndex = i;
-            }
-        }
-        return maxIndex;
-    }
-
-    static int binarySearch(int[] arr, int l, int r, int k) {
-        if (l > r) return -1;
-        int mid = (l + r) / 2;
-        if (arr[mid] == k) {
-            return mid + 1;
-        } else if (k > mid) {
-            return binarySearch(arr, mid + 1, r, k);
-        } else {
-            return binarySearch(arr, l, mid - 1, k);
-        }
+        int[] arr = {4, 5, 6, 7, 8, 9, 1, 2, 3};
+        int n = arr.length;
+        int key = 6;
+        int i = search(arr, 0, n - 1, key);
+        if (i != -1)
+            System.out.println("Index: " + i);
+        else
+            System.out.println("Key not found");
     }
 }
 
-// fin
