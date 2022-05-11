@@ -1,4 +1,4 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 import java.util.Arrays;
 import java.util.HashMap;

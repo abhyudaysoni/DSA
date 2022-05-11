@@ -1,6 +1,6 @@
 //Q: group negative and positive numbers separately in an array not necessarily sorted
 
-package mockInterviews;
+package mockInterviews.prev;
 
 import java.util.Arrays;
 import java.util.Scanner;

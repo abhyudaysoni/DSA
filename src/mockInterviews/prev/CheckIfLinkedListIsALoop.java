@@ -1,12 +1,14 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 import java.util.HashMap;
 
 public class CheckIfLinkedListIsALoop {
     Node head;
+
     public static void main(String[] args) {
 
     }
+
     boolean checkLoop() {
         boolean res = false;
         HashMap<Node, Integer> hm = new HashMap<>();

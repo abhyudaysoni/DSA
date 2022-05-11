@@ -1,4 +1,4 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 public class ReversingALinkedList {
     static Node head;

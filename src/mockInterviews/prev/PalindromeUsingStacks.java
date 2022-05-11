@@ -1,4 +1,4 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 import java.util.Scanner;
 import java.util.Stack;

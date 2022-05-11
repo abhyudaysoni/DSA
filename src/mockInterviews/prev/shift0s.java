@@ -1,9 +1,9 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Bubble {
+public class shift0s {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -11,18 +11,14 @@ public class Bubble {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        bubbleSorting(arr);
-        System.out.println(Arrays.toString(arr));
-    }
-
-    public static void bubbleSorting(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
-                }
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                swap(arr, i, j);
+                j++;
             }
         }
+        System.out.println(Arrays.toString(arr));
     }
 
     public static void swap(int[] arr, int i, int j) {

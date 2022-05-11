@@ -1,4 +1,4 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 public class SearchingInSortedAndRotated {
     static int search(int[] arr, int l, int h, int key) {

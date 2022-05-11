@@ -1,4 +1,4 @@
-package mockInterviews;
+package mockInterviews.prev;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -26,6 +26,6 @@ public class CommonInArray {
         }
         System.out.println(hm1);
         System.out.println(hm2);
-        
+
     }
 }
