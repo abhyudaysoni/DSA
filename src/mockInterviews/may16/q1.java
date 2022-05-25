@@ -1,31 +1,33 @@
 package mockInterviews.may16;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class q1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = {-1, 2, 3, -5, 0, -2, 7, -6, 0, -9, 4, 8, 2};
-        int n = 6;
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.print("Number of pairs is " + getPairsCount(arr, n, k));
+    }
+
+    static int getPairsCount(int[] arr, int n, int k) {
+        HashMap<Integer, Integer> m = new HashMap<>();
         int count = 0;
-//        //O(n)
-//        //print count of pairs that sum to n
-//        //(-1, 7)()
-        HashMap<Integer, Integer> hm = new HashMap<>();
-        HashSet<Integer> hs = new HashSet<>();
-        for (int i = 0; i < arr.length; i++) {
-            if (hm.containsKey(n - arr[i])) {
-                count = count + hm.get(n - arr[i]);
+        for (int i = 0; i < n; i++) {
+            if (m.containsKey(k - arr[i])) {
+                count = count + m.get(k - arr[i]);
             }
-            if (hm.containsKey(arr[i])) {
-                hm.put(arr[i], hm.get(arr[i] + 1));
+            if (m.containsKey(arr[i])) {
+                m.put(arr[i], m.get(arr[i]) + 1);
             } else {
-                hm.put(arr[i], 1);
+                m.put(arr[i], 1);
             }
         }
-        System.out.println(hm);
-        System.out.println(count);
+        return count;
     }
 }

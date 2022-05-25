@@ -24,4 +24,19 @@ public class Pangram {
         }
         return hsAlp.equals(hsStr);
     }
+
+    public boolean checkIfPangram(String sentence) {
+        HashSet<Character> hsStr = new HashSet<>();
+        HashSet<Character> hsAlp = new HashSet<>();
+        sentence = sentence.toLowerCase();
+        for (int i = 0; i < sentence.length(); i++) {
+            hsStr.add(sentence.charAt(i));
+        }
+        hsStr.remove(' ');
+        for (int i = 97; i < 123; i++) {
+            char ch = (char) i;
+            hsAlp.add(ch);
+        }
+        return hsAlp.equals(hsStr);
+    }
 }
