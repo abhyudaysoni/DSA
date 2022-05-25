@@ -56,7 +56,7 @@ class ReverseLLInGroups {
             count++;
         }
         if (next != null)
-            head.next = reverse(next, k);
+            head.next = reverseInGroups(next, k);
         return prev;
     }
 
