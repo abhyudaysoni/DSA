@@ -11,10 +11,6 @@ class ReverseLLInGroups {
 
         ReverseLLInGroups l = new ReverseLLInGroups();
 
-        l.push(9);
-        l.push(8);
-        l.push(7);
-        l.push(6);
         l.push(5);
         l.push(4);
         l.push(3);

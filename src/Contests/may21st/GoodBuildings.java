@@ -15,14 +15,17 @@ public class GoodBuildings {
     }
 
     static void goodBuildings(int[] arr) {
+        int max = Integer.MIN_VALUE;
         ArrayList<Integer> ls = new ArrayList<>();
-        for (int i = 1; i < arr.length - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] >= max) {
                 ls.add(arr[i]);
             }
+            if (arr[i] > max) {
+                max = arr[i];
+            }
         }
-        ls.add(arr[arr.length - 1]);
-        for (int i = 0; i < ls.size(); i++) {
+        for (int i = ls.size() - 1; i >= 0; i--) {
             System.out.print(ls.get(i) + " ");
         }
     }

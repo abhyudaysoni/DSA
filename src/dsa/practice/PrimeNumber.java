@@ -21,5 +21,6 @@ public class PrimeNumber {
             }
             i++;
         }
+        System.out.println(count);
     }
 }
