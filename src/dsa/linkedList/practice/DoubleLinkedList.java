@@ -9,6 +9,16 @@ public class DoubleLinkedList {
     }
 
     public static void main(String[] args) {
+        DoubleLinkedList dll = new DoubleLinkedList();
+        dll.insertAtFirst(2);
+        dll.insertAtFirst(4);
+        dll.insertAtFirst(6);
+        dll.insertAtFirst(8);
+        dll.insertAtFirst(20);
+        dll.insertAtFirst(12);
+        dll.display();
+        dll.delete(4);
+        dll.display();
 
     }
 
@@ -32,9 +42,17 @@ public class DoubleLinkedList {
         if (head != null) {
             head.prev = node;
         }
-        head.prev = node;
         head = node;
         return head;
+    }
+
+    void display() {
+        Node i = head;
+        while (i != null) {
+            System.out.print(i.data + "->");
+            i = i.next;
+        }
+        System.out.println();
     }
 
     Node insertAtIndex(int data, int idx) {
@@ -51,6 +69,18 @@ public class DoubleLinkedList {
         prev.next = node;
         temp.prev = node;
         return head;
+    }
+
+    Node delete(int k) {
+        int count = 0;
+        Node i = head;
+        while (count < k) {
+            i = i.next;
+            count++;
+        }
+        i.prev.next = i.next;
+        i.next.prev = i.prev;
+        return i;
     }
 
     int getSize(Node head) {
