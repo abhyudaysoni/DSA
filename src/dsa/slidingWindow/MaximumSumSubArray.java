@@ -11,12 +11,52 @@ public class MaximumSumSubArray {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        maximumSumSubArray(arr, k);
+        System.out.println(maximumSumSubArray(arr, k));
     }
 
-    static void maximumSumSubArray(int[] arr, int k) {
-        for (int i = 0; i < arr.length; i++) {
-
+    static long maximumSumSubArray(int[] arr, int k) {
+        int i = 0, j = 0;
+        long sum = 0;
+        long maxSum = Integer.MIN_VALUE;
+        while (j < arr.length) {
+            sum = sum + arr[j];
+            if (j - i + 1 < k) {
+                j++;
+            } else if (j - i + 1 == k) {
+                maxSum = Math.max(maxSum, sum);
+            }
+            sum = sum - arr[i];
+            i++;
+            j++;
         }
+        return maxSum;
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
